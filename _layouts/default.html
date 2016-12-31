@@ -9,18 +9,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <h2></h2>
-        <section id="downloads"></section>
-      </div>
-    </header>
 
-    <div class="container">
-      <section id="main_content">
-        <h1 id="markdown"> Page under construction... </h1>
-      </section>
-    </div>
+     {% include home.html }
 
      {% if site.google_analytics %}
       <script type="text/javascript">
@@ -34,5 +24,6 @@
         } catch(err) {}
       </script>
     {% endif %}
+    
   </body>
 </html>

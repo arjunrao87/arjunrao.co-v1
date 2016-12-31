@@ -9,6 +9,14 @@
   </head>
 
   <body>
+
+    <header>
+      <div class="container">
+        <h2></h2>
+        <section id="downloads"></section>
+      </div>
+    </header>
+
     <div class="container">
       <section id="main_content">
         <h2 id="welcome-to-github-pages">Welcome to GitHub Pages</h2>
@@ -52,8 +60,7 @@
       </section>
     </div>
 
-
-    {% if site.google_analytics %}
+     {% if site.google_analytics %}
       <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -64,7 +71,6 @@
         pageTracker._trackPageview();
         } catch(err) {}
       </script>
-    {% endif %}
-    
+    {% endif %}   
   </body>
 </html>

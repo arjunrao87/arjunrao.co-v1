@@ -17,6 +17,10 @@ figure > img { display: block; }
 
 figcaption { font-size: 14px; }
 
+.spacing {
+	padding: 50px 0;
+}
+
 /** Lists */
 ul, ol { margin-left: 30px; }
 

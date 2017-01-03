@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: posts
 title: Website Redesign
 tags: website redesign
 ---

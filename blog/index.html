@@ -1,12 +1,4 @@
 ---
-layout: page
-title : Blog Page
+name  : bootstrap-3
 ---
-
-  <ul style="text-align:center">
-    {% for post in site.posts %}
-      <ul>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </ul>
-    {% endfor %}
-  </ul>
+{% include base.html src="blog.html" %}

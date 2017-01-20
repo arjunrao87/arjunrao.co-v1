@@ -1,133 +1,74 @@
-/**
- * Note: The icon images used here are
- * hotlink protected and will not work
- * outside of Codepen.
- *
- * You can get the icons to host yourself
- * here: http://simpleicons.org/
- */
+@import url(http://weloveiconfonts.com/api/?family=brandico);
 
-/* body {
-    display: block;
-    padding: 20px;
-    font-family: sans-serif;
-} */
-
-.social-icons {
-    max-width: 980px;
-    margin: 0 auto;
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
 }
 
-.icon {
-    float: left;
-    position: relative;
-    width: 19%;
-    height: 0;
-    margin: 1% 0.5%;
-    padding-bottom: 19%;
-
-    @media all and (min-width: 640px) {
-        width: 9%;
-        padding-bottom: 9%;
-    }
-
-    &:last-of-type {
-        margin-right: 0;
-    }
-
-    a {
-        display: block;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        border-radius: 10px;
-        background-color: #fff;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-        transition: all .2s ease-out;
-
-        &:hover {
-            background-color: #222;
-            background-size: 0%;
-            transition: all .2s ease-out;
-        }
-    }
+ul.social-buttons {
+  text-align: center;
+  margin-top: 50px;
 }
 
-.icon__name {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    margin-top: -7px;
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-
-    transition: all .3s ease-out;
-    opacity: 0;
-    filter: blur(25px);
-    transform: translateZ(0);
-    will-change: transform;
-
-    .icon:hover & {
-        transition: all .3s ease-out;
-        opacity: 1;
-        filter: blur(0);
-    }
+ul.social-buttons li {
+  display: inline-block;
+  margin: 0 10px;
 }
 
-
-// Customise Icons
-
-.icon--facebook a {
-    background-color: #3b5998;
-    background-image: url('http://benhodgson.net/codepen/social/facebook-128.png');
+ul.social-buttons li a {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 60px;
+  color: white;
 }
 
-.icon--twitter a {
-    background-color: #00aced;
-    background-image: url('http://benhodgson.net/codepen/social/twitter-128.png');
+ul.social-buttons li a.brandico-twitter-bird {
+  background-color: #4099FF;
 }
 
-.icon--linkedin a {
-    background-color: #007fb1;
-    background-image: url('http://benhodgson.net/codepen/social/linkedin-128.png');
+ul.social-buttons li a.brandico-facebook {
+  background-color: #3B5998;
 }
 
-.icon--instagram a {
-    background-color: #5c3d2e;
-    background-image: url('http://benhodgson.net/codepen/social/instagram-128.png');
+ul.social-buttons li a.brandico-instagram {
+  background-color: #3f729b;
 }
 
-.icon--flickr a {
-    background-color: #c9317d;
-    background-image: url('http://benhodgson.net/codepen/social/flickr-128.png');
+ul.social-buttons li a.brandico-vimeo {
+  background-color: #4EBBFF;
 }
 
-.icon--spotify a {
-    background-color: #80b719;
-    background-image: url('http://benhodgson.net/codepen/social/spotify-128.png');
+ul.social-buttons li a.brandico-linkedin {
+  background-color: #0e76a8;
 }
 
-.icon--soundcloud a {
-    background-color: #f60;
-    background-image: url('http://benhodgson.net/codepen/social/soundcloud-128.png');
+/*Demo 1*/
+ul#demo1 li a {
+  transition: transform 0.2s linear;
 }
 
-.icon--lastfm a {
-    background-color: #d51007;
-    background-image: url('http://benhodgson.net/codepen/social/lastfm-128.png');
+ul#demo1 li:hover a {
+  transform: translateY(-10px);
 }
 
-.icon--kickstarter a {
-    background-color: #87c442;
-    background-image: url('http://benhodgson.net/codepen/social/kickstarter-128.png');
+/*Demo 2*/
+ul#demo2 li a {
+  transition: transform 0.5s ease-in-out;
 }
 
-.icon--github a {
-    background-color: #4183c4;
-    background-image: url('http://benhodgson.net/codepen/social/github-128.png');
+ul#demo2 li:hover a {
+  transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+}
+
+/*Demo 3*/
+ul#demo3 li a {
+  transition: transform 0.2s ease-in-out 0;
+}
+
+ul#demo3 li:hover a {
+  transform: rotateZ(27deg) scale(1.1);
 }

@@ -74,20 +74,6 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
   color: #cbc6c1;
 }
 
-/*body {
-  font-family: 'Lato', sans-serif;
-  background: #e2dedb;
-  color: #b3aca7;
-}
-
-header {
-  position: relative;
-  margin: 100px 0 25px 0;
-  font-size: 2.3em;
-  text-align: center;
-  letter-spacing: 7px;
-}*/
-
 #form {
   position: relative;
   width: 500px;
@@ -107,11 +93,11 @@ input {
 
   border: solid 1px #b3aca7;
   border-bottom: none;
-
+/*
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;*/
 }
 
 input:hover {
@@ -135,10 +121,10 @@ textarea {
 
   border: solid 1px #b3aca7;
 
-  transition: all 0.3s ease-in-out;
+  /*transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;*/
 }
 
 textarea:hover {

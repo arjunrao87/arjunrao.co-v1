@@ -192,15 +192,6 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .highlight .il { color: #099; }
 
 
-html {
-	font-size: 20px;
-}
-body {
-	background-color: #ccc;
-	padding: 50px;
-	text-align: center;
-}
-
 /* Wrapper */
 .icon-button {
 	background-color: white;

@@ -20,9 +20,17 @@ h3,a {
 	font-weight: 500;
 	line-height: 15.4px;
 }
+home-text{
+	font-family: Cardo;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
 body,p,li {
 	font-family: Cardo;
-	font-size: 14px;
+	font-size: 16px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
@@ -122,7 +130,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .site-logo { width: 48px; height: 48px; }
 
-.site-nav { margin-top: 0.5em; }
+.site-nav { margin-top: 0.5em;}
 .site-nav .wrapper { padding-bottom: 0.5em; text-align: center; }
 .site-nav .page-link { display: inline-block; padding: 0.5em; }
 

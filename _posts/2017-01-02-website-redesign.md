@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 ---
 
 # Website redesign 2017

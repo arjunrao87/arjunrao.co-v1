@@ -1,0 +1,138 @@
+---
+layout: post
+title: Storm with Netty 101
+date: 
+type: post
+published: false
+status: private
+categories:
+- Tech
+tags:
+- storm netty
+meta:
+  _oembed_dc09f5de1b891bd99d5bf55bbf535378: '{{unknown}}'
+  _edit_last: '29509676'
+  _oembed_f84d6d4e6eefedb57551fce12ee0a94c: '{{unknown}}'
+  _oembed_f8ca2c21a206193b5a58c89827713485: '{{unknown}}'
+  _oembed_1bc25c8d7506623c79637e564206d4b7: '{{unknown}}'
+  _oembed_775d9dc2301447cfff35d49839405602: '{{unknown}}'
+  _oembed_f30b7463394a907b37ce38eb1ff6c5c1: '{{unknown}}'
+  _oembed_c00df77460e76f263f50db2a42c86404: '{{unknown}}'
+  _oembed_2ac0e1b57727b34cd1d4e639cc6a623d: '{{unknown}}'
+  _oembed_00c5394c3c062c745a03cae0afc513a7: '{{unknown}}'
+  _wpas_skip_facebook: '1'
+  _wpas_skip_google_plus: '1'
+  _wpas_skip_twitter: '1'
+  _wpas_skip_linkedin: '1'
+  _wpas_skip_tumblr: '1'
+  _wpas_skip_path: '1'
+  _oembed_6eb557233d0b96eefa03f2c8fd92f86d: '{{unknown}}'
+  _publicize_job_id: '18236235297'
+author:
+  login: arjunrao87
+  email: sporty.arjun@gmail.com
+  display_name: arjunrao87
+  first_name: ''
+  last_name: ''
+---
+<p><strong>Why am I doing this?</strong></p>
+<p>I am using Storm to perform ETL for real time inbound files/database changes/incoming messages. Using storm as the infrastructure and will create the business logic to figure out how to deal with the incoming streams of data. I heavily reference http://www.michael-noll.com/tutorials/running-multi-node-storm-cluster/ as the source of my storm setup knowledge. For now. I do not want to use ZeroMQ ( ugghh c++ ) as my messaging layer. Since Yahoo has provided Netty as the optional messaging layer plugin, I would rather use that.<!--more--></p>
+<p><strong>Basic Prerequisites:</strong></p>
+<p>1. Install Java 6/7 (Really doesnt matter)<br />
+sudo yum install java-1.6.0-openjdk</p>
+<p>2. Install Unzip<br />
+sudo yum install unzip<br />
+Note: this is not really required. Unzip is only required to decompress a Storm release package, which comes as a .zip file. You can feel free to use the GUI version of whatever linux(ubuntu or otherwise) ships with.</p>
+<p>3. No ZeroMQ or JZMQ or Autoconf or Automake<br />
+Since we are using Netty as the transport layer, we do not have the need for any C++ building or any of the Java bindings that are built on top of these native C++ libraries to talk with Storm.</p>
+<p>4. Install Maven<br />
+sudo apt-get install mvn</p>
+<p>Note: Not really required. If you have your own build system(ivy or otherwise) just make sure you are using the right config files to pull in all the required dependencies.</p>
+<p><strong>A. Installing Zookeper + Storm + Running topologies</strong><br />
+<em><span style="text-decoration:underline;">a. Zookeeper</span></em><br />
+Nothing fancy. Just download the zip file of the latest version from the official zookeeper page: http://zookeeper.apache.org/releases.html. After downloading it, I extracted the sub-folder to the ~/Desktop/storm folder.</p>
+<p>In the conf/ folder, just change the zoo_sample.cfg name to zoo.cfg. For<br />
+now you dont need to modify any values in the cfg file itself.</p>
+<p>Now you are ready to start your zookeeper instance. Use &lt;command&gt;. Verify if its started correctly using:</p>
+<p>echo stat | nc 127.0.0.1 2181</p>
+<p><span style="text-decoration:underline;"><em>b. Storm</em></span><br />
+Netty works only with the &gt; 0.9.0 versions of storm. I do not know at this point how stable these versions are, but since they use Netty, I am willing to take the plunge.</p>
+<p>For me there were 2 parts to "downloading" storm.</p>
+<p>i.  Getting the source code, so I can see it in an IDE<br />
+https://github.com/nathanmarz/storm</p>
+<p>You can either:<br />
+1. git clone https://github.com/nathanmarz/storm.git<br />
+2. Download the zip file and extract it to any location and point your IDE to that location to see the source code</p>
+<p>ii. Getting the binary, for my storm cluster et al.<br />
+Go to this website: http://storm-project.net/downloads.html</p>
+<p>Since we want Netty as the transport layer and that is available only in the &gt; 0.9.0 versions, I chose to download the Storm 0.9.0-rc2 version.</p>
+<p>Now these are just directory choices that I made. It can actually be anywhere you want. Just make sure the corresponding commands are kicked off referencing the right directories later on.</p>
+<p>Storm Binaries          : /usr/local/storm-0.9.0-rc2<br />
+Storm-starter Examples  : /tmp/storm-starter<br />
+Storm Working directory : /usr/local/storm/</p>
+<p>Disclaimer: I followed the blog post by Michael Noll to set up these directories and a lot of the storm setup instructions.</p>
+<p>Once you have these directories setup and the storm binary downloaded, make sure you make the following changes to the storm.yaml file in the conf/ directory of the storm binary that you have just stored in /usr/local/storm-0.9.0-rc2</p>
+<p>//Enable Netty<br />
+storm.messaging.transport: "backtype.storm.messaging.netty.Context"<br />
+storm.messaging.netty.server_worker_threads: 1<br />
+storm.messaging.netty.client_worker_threads: 1<br />
+storm.messaging.netty.buffer_size: 5242880<br />
+storm.messaging.netty.max_retries: 100<br />
+storm.messaging.netty.max_wait_ms: 1000<br />
+storm.messaging.netty.min_wait_ms: 100</p>
+<p>//Enable Zookeeper<br />
+storm.zookeeper.servers: - "127.0.0.1"</p>
+<p>//Enable Nimbus<br />
+nimbus.host: "127.0.0.1"</p>
+<p>Now you are all set to kick off your storm cluster.<br />
+Here is a few basic commands you should run to make sure everything is setup ok.</p>
+<p>Go to the /usr/local/storm-0.9.0-rc2 directory and run the following commands separately:</p>
+<p>bin/storm nimbus     //Brings up nimbus<br />
+bin/storm ui         // Brings up storm ui<br />
+bin/storm supervisor // Brings up 1 supervisor</p>
+<p>Make sure there are no errors spewing on the console. As a precautionary check also make sure in the storm logs( check the directory above) for the ui, nimbus and the supervisor there are no errors showing up, because sometimes you do not see anything on the console while things are silently failing in the logs for some silly reason.</p>
+<p>If all looks well, you are ready to test out your example topologies or unleash the real deal.</p>
+<p><span style="text-decoration:underline;"><em>c. Running example topologies(storm-starter)</em></span></p>
+<p>Go to https://github.com/nathanmarz/storm-starter and download the zip file. You can also clone the git repo of course.</p>
+<p>My target location for storing the storm-starter project is as given above<br />
+/tmp/storm-starter</p>
+<p>In the same folder, modify the pom.xml to have the storm version as 0.9.0-rc2 instead of 0.8.2.</p>
+<p>You are now ready to build your storm-starter project. I do not want to use clojure and leinengen and all that fancy stuff. Simply Maven.</p>
+<p>Run this command in the same directory as the pom file</p>
+<p>mvn -f m2-pom.xml package</p>
+<p>This will package your code and all the non-Storm dependencies into a single "uberjar" at the path :</p>
+<p>target/storm-starter-{version}-jar-with-dependencies.jar</p>
+<p>This is the jar you will use to execute your example topologies. We will focus on the ExclamationTopology example.</p>
+<p>Use this command in the same directory, to run the topology  :</p>
+<p>/usr/local/storm/bin/storm jar target/storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.ExclamationTopology exclamation-topology</p>
+<p>This starts off the ExclamationTopology and you should see this</p>
+<p>[main] INFO  backtype.storm.StormSubmitter  - Jar not uploaded to master yet. Submitting jar...<br />
+[main] INFO  backtype.storm.StormSubmitter  - Uploading topology jar storm-starter-0.0.1-SNAPSHOT-standalone.jar to assigned location: /app/storm/nimbus/inbox/stormjar-8a208db8-78d5-45e5-9a99-924f03900759.jar<br />
+[main] INFO  backtype.storm.StormSubmitter  - Successfully uploaded topology jar to assigned location: /app/storm/nimbus/inbox/stormjar-8a208db8-78d5-45e5-9a99-924f03900759.jar<br />
+[main] INFO  backtype.storm.StormSubmitter  - Submitting topology exclamation-topology in distributed mode with conf {"topology.workers":3,"topology.debug":true}<br />
+[main] INFO  backtype.storm.StormSubmitter  - Finished submitting topology: exclamation-topology</p>
+<p>This means the topology is not started in the local mode but has been submitted to the storm cluster. If you have a supervisor running, you can actually see the activity in the storm UI or parallely you can also tail the supervisor logs in the storm logs directory and see a detailed(debug:true) version of what is being emitted etc.</p>
+<p>That is all really. You now have a storm cluster with netty as the transport layer, crunching example topologies.</p>
+<p>There are several points that need to be understood such as:</p>
+<p>1. Benchmarking netty<br />
+2. Understanding how to optimize the groupings among the workers<br />
+3. Getting the workers, supervisors,  tasks and executors configs optimized.<br />
+4. Heap allocation for these processes and Garbage collection issues<br />
+5. Understanding logging of these processes when they are spread across several hosts<br />
+6. Figuring out how the acks work and how to deal with failures<br />
+7. Creating monitoring for the tuple passing and changing statuses on this monitoring fmwk to reflect the steps in the ETL process</p>
+<p>Will update this blog post as I go on this storm adventure.</p>
+<p><strong>B. Cheat sheet of Commands:</strong><br />
+1. Zookeeper<br />
+~/Desktop/storm/zookeeper-3.4.5<br />
+bin/zkServer.sh start-foreground</p>
+<p>2. Storm<br />
+/usr/local/storm-0.9.0-rc2<br />
+bin/storm nimbus<br />
+bin/storm ui<br />
+bin/storm supervisor</p>
+<p>3. Examples<br />
+/tmp/storm-starter<br />
+/usr/local/storm/bin/storm jar target/storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.ExclamationTopology exclamation-topology</p>
+<p>4. Logs<br />
+/usr/local/storm/logs</p>

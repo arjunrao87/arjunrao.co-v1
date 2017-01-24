@@ -5,6 +5,8 @@
       <ul>
         <p> {{ post.date | date_to_long_string }} </p>
         <a href="{{ post.url }}">{{ post.title }}</a>
+        <br />
+        {{ post.content | strip_html | truncatewords:50 }}
       </ul>
       <br/>
       <br />

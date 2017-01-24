@@ -20,7 +20,7 @@ h3 {
 	font-weight: 500;
 	line-height: 15.4px;
 }
-p {
+body,p {
 	font-family: Cardo;
 	font-size: 14px;
 	font-style: normal;
@@ -44,7 +44,6 @@ pre {
 	font-weight: 400;
 	line-height: 18.5714px;
 }
-
 /** Set `margin-bottom` to maintain vertical rhythm */
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; line-height: 1.8; }
 

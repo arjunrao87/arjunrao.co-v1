@@ -136,7 +136,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
 .site-nav { margin-top: 0.5em;}
 .site-nav .wrapper { padding-bottom: 0.5em; text-align: center; }
-.site-nav .page-link { display: inline-block; padding: 0.5em; }
+.site-nav .page-link-home { display: inline-block; padding: 0.5em; }
 
 /** Site footer */
 .site-footer { border-top: 1px solid #e8e8e8; padding: 30px 0; }
@@ -246,3 +246,12 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .highlight .vg { color: #008080; }
 .highlight .vi { color: #008080; }
 .highlight .il { color: #099; }
+
+.card-columns-duo {
+  column-count : 2
+}
+
+.card-columns-solo {
+		width: 33%;
+		margin: 0 auto;
+}

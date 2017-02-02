@@ -1,30 +1,200 @@
 <div>
-  <!-- To alter the image of the world map, use AMCharts ( https://jsfiddle.net/naua204y/ ) -->
-	<!-- You will need to reselect the countries and then take a screenshot and then overwrite the image /img/world-map.png -->
   <br />
   <br />
-  	<div class="row">
-	  	<div class="box">
-		    <div class="col-lg-12 text-center">
-		    	<div>
-            <img src="/assets/img/world-map.png" alt="World map"/>
-          </div>
-		    </div>
-		</div>
-	</div>
-
+  <div align="center"><h2-item> World Travel </h2-item></div>
+  <br />
+  <div align="center">
+    <div>
+      <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+      <script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js" type="text/javascript"></script>
+      <script src="https://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+      <div id="mapdiv" style="width: 80%; height: 450px;"></div>
+    </div>
+    <script type="text/javascript">
+    var map = AmCharts.makeChart("mapdiv",{
+      type: "map",
+      theme: "light",
+      projection: "miller",
+      panEventsEnabled : true,
+      backgroundColor : "#535364",
+      backgroundAlpha : 1,
+      zoomControl: {
+        zoomControlEnabled : false
+      },
+      dataProvider : {
+        map : "worldHigh",
+        getAreasFromMap : false,
+        areas :
+        [
+          {
+            "id": "CZ",
+            "showAsSelected": true
+          },
+          {
+            "id": "DE",
+            "showAsSelected": true
+          },
+          {
+            "id": "DK",
+            "showAsSelected": true
+          },
+          {
+            "id": "ES",
+            "showAsSelected": true
+          },
+          {
+            "id": "IS",
+            "showAsSelected": true
+          },
+          {
+            "id": "NL",
+            "showAsSelected": true
+          },
+          {
+            "id": "NO",
+            "showAsSelected": true
+          },
+          {
+            "id": "SE",
+            "showAsSelected": true
+          },
+          {
+            "id": "CA",
+            "showAsSelected": true
+          },
+          {
+            "id": "US",
+            "showAsSelected": true
+          },
+          {
+            "id": "IN",
+            "showAsSelected": true
+          }
+        ]
+      },
+      areasSettings : {
+        autoZoom : true,
+        color : "#B4B4B7",
+        colorSolid : "#84ADE9",
+        selectedColor : "#84ADE9",
+        outlineColor : "#666666",
+        rollOverColor : "#F59D9D",
+        rollOverOutlineColor : "#000000"
+      }
+    });
+    </script>
+  </div>
   <br />
   <br />
-
-	<!-- To alter this section, revisit timeline.js ( https://timeline.knightlab.com/ ) -->
-	<!-- The spreadsheet is already stored in your sheets folder. Look for timeline titled sheet and modify that. You dont need to do anything else.-->
-	<div class="row">
-	  	<div class="box">
-	  		<div class="col-lg-12 text-center">
-	  			<div>
-	  				<iframe src='//cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1lCWDAjNlRAMerFE4HMtZCtZ69NsEDtOn_4jEQaFLAP0&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' frameborder='0'></iframe>
-	  			</div>
-		  	</div>
-	  	</div>
-	</div>
+  <div align="center"><h2-item> USA Travel </h2-item></div>
+  <br />
+  <div align="center">
+    <script src="https://www.amcharts.com/lib/3/ammap.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/usaHigh.js" type="text/javascript"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js" type="text/javascript"></script>
+    <div id="mapdiv1" style="width: 80%; height: 450px;"></div>
+    <script type="text/javascript">
+    var map = AmCharts.makeChart("mapdiv1",{
+    type: "map",
+    theme: "light",
+    panEventsEnabled : true,
+    backgroundColor : "#535364",
+    backgroundAlpha : 1,
+    zoomControl: {
+    zoomControlEnabled : false
+    },
+    dataProvider : {
+    map : "usaHigh",
+    getAreasFromMap : false,
+    areas :
+    [
+    	{
+    		"id": "US-CA",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-CT",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-DC",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-DE",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-FL",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-MA",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-MD",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-NC",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-NH",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-NJ",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-NY",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-OH",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-PA",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-RI",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-VT",
+    		"showAsSelected": true
+    	},
+    	{
+    		"id": "US-WA",
+    		"showAsSelected": true
+    	}
+    ]
+    },
+    areasSettings : {
+    autoZoom : true,
+    color : "#B4B4B7",
+    colorSolid : "#84ADE9",
+    selectedColor : "#84ADE9",
+    outlineColor : "#666666",
+    rollOverColor : "#9EC2F7",
+    rollOverOutlineColor : "#000000"
+    }
+    });
+    </script>
+  </div>
+  <br />
+  <br />
+  <div align="center"><h2-item> Travel Timeline </h2-item></div>
+  <br />
+  <!-- To alter this section, revisit timeline.js ( https://timeline.knightlab.com/ ) -->
+  <!-- The spreadsheet is already stored in your sheets folder. Look for timeline titled sheet and modify that. You dont need to do anything else.-->
+  <div align="center">
+    <div>
+      <iframe src='//cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1lCWDAjNlRAMerFE4HMtZCtZ69NsEDtOn_4jEQaFLAP0&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' frameborder='0'></iframe>
+    </div>
+  </div>
 </div>

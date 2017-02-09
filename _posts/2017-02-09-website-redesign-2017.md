@@ -1,20 +1,10 @@
 ---
 layout: post
-title: Change in direction
+title: Website Redesign 2017
 date: 2017-02-11 00:00:00.000000000 -04:00
-type: post
-published: false
-status: publish
-comments: false
-categories: []
-tags: []
-author:
-  login: arjunrao87
-  email: sporty.arjun@gmail.com
-  display_name: arjunrao87
-  first_name: ''
-  last_name: ''
+categories: jekyll update
 ---
+
 This is meant to be a short blog post on the process I went through to revamp my personal website. I'll walk through some of the design decisions as well as some of the mistakes ( at times horrendous ) that I made.
 
 I personally think it is important to have your own home page. You could have myriad reasons to have one ranging for showcasing your talents, presenting it as an online resume or in my case, just a place that I could tinker with technologies that I do not use in my day job.
@@ -48,9 +38,20 @@ In my website's 2.0 version, I wanted a very clean and sparse look. I felt that 
 5. Page layout and design consideration
 
 * Title Bar
+
 Changed the font type to Cardo from Josefin Slab. It is much "lighter" and gives a cleaner look
 
+<div id="container1">
+  <img src="sample-before.png">
+  <img src="sample-after.png">
+</div>
+
 * Navigation Bar
+
+The Nav Bar isn't that conspicuous now in terms of styling. It is just surrounded by 2 thin lines instead of being embedded within a bar.
+
+
+
 * Footer
 * Favico
 * Home Page

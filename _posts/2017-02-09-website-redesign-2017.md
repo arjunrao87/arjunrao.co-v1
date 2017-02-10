@@ -6,7 +6,7 @@ type: post
 published: true
 status: publish
 comments: true
-categories: []
+categories: jekyll update
 tags: []
 ---
 

@@ -167,5 +167,5 @@ v/s
 
 Google analytics. Definitely like to have metrics associated with anything I do. Its the only way you can measure your performance. Google Analytics is super easy to use and gives me a swath of information which I can make some very telling observations off of, including bounce rates and places people access my site for. Definitely a must-have. If not google, then some other analytics like Hotjar. Adding SEO as well as Google Adsense is possibly in the works.
 
-
+<br/>
 I'd say it was real fun rebuilding my website as it helped me make some UX design decisions. Is this the final version of the website? I am pretty sure the answer to that is a strong No because I will always be looking to learn something new. As Brian Herbert said, "The capacity to learn is a gift; the ability to learn is a skill ; the willingness to learn is a choice." and its a choice I am making willfully.

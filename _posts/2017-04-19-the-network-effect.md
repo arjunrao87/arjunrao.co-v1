@@ -14,13 +14,15 @@ Achieving success is not a formula. Being successful involves doing things, real
 
 Having observed the fact that its tough to achieve success, let me talk about something that doesn’t usually come up. Whenever people talk about other successful people, the grossly oversimplified conversation most typically, consists of :
 
-- The person had a revolutionary ( or not so revolutionary ) idea
+1. The person had a revolutionary ( or not so revolutionary ) idea
 
-- Over a span of time, she/he slogged over the idea while being filled with self-doubt and failure
+2. Over a span of time, she/he slogged over the idea while being filled with self-doubt and failure
 
-- Hit that magical spot of growth, which catapulted her/him into the successful person that they have become.
+3. Hit that magical spot of growth, which catapulted her/him into the successful person that they have become.
 
 The part that is universally left out is something that I call ‘The Network Effect’; not to be confused with the term used in Economics. The Network Effect, in my definition, is the effect you benefit from by being in/around a successful network. It is what you gain (perhaps mutually) by being in contact with people who have achieved a heavy measure of success in their own venture. People who have achieved success didn’t benefit from The Network Effect serendipitously.
+
+![alt text](https://github.com/arjunrao87/arjunrao87.github.io/blob/master/assets/img/network-effect.jpeg "Network Effect")
 
 It is possible they grew up with people who were part of the Network already; examples of this are Evan Spiegel (Snapchat) , Donald Trump (no introductions needed) , Richard Branson and the list goes on. I don’t intend to imply that wealth necessarily played a part in their success story, but being exposed to a culture of high achievement and being placed in contact with people in highly influential positions, cannot be ignored as a part of this conversation.
 

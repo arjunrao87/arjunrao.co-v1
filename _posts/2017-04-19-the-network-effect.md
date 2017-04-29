@@ -6,7 +6,7 @@ type: post
 published: true
 status: publish
 comments: true
-categories: blog
+categories: []
 tags: []
 ---
 

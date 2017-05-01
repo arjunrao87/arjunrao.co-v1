@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Coming to America: An Immigrant's Perspective
+title: Coming to America - An Immigrant's Perspective
 date: 2017-04-19
 type: post
 published: true

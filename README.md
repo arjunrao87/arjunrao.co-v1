@@ -4,5 +4,5 @@
 
 ```
 cd <project-folder>
-jekyll serve
+bundle exec jekyll serve
 ```

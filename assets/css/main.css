@@ -268,7 +268,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 }
 
 .card-columns-tri {
-  column-count : 3
+  column-count : 2;
+	width: 75%;
+	margin: 0 auto;
 }
 
 .card-columns-solo {

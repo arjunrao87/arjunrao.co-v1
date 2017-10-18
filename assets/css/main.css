@@ -279,6 +279,9 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 }
 * { box-sizing: border-box; }
 
+.card-columns {
+    column-count: 2;
+}
 /* ---- grid ---- */
 
 .grid {

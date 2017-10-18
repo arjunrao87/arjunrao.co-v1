@@ -267,6 +267,10 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
   column-count : 2
 }
 
+.card-columns-tri {
+  column-count : 3
+}
+
 .card-columns-solo {
 		width: 33%;
 		margin: 0 auto;

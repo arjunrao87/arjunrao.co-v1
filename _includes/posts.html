@@ -2,15 +2,6 @@
   <h1>{{ page.title }}</h2>
   <p>{{ page.date | date: '%B %d, %Y' }}</p>
 {{ content }}
-<div align="right">
-  <ul class="share-buttons">
-    <li> Share : </li>
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.arjunrao.co&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/assets/img/Facebook.png"></a></li>
-    <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fwww.arjunrao.co&text=:%20http%3A%2F%2Fwww.arjunrao.co&via=raoarjun" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/assets/img/Twitter.png"></a></li>
-    <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.arjunrao.co" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="/assets/img/Google+.png"></a></li>
-    <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Fwww.arjunrao.co&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/assets/img/Reddit.png"></a></li>
-  </ul>
-</div>
 {% if page.comments %}
 <div id="disqus_thread"></div>
 <script>

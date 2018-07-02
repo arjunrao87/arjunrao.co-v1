@@ -53,8 +53,8 @@ body,p,li {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-	background-color: #EAF7FC;
-	color: #6D6F70
+	background-color: rgba(247, 244, 244, 0.596);
+	color: rgb(45, 46, 46)
 }
 pa {
 	font-family: Cardo;
@@ -272,7 +272,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 }
 
 .card-block-format{
-	background-color: #EAF7FC
+	background-color:  rgba(247, 244, 244, 0.596);
 }
 
 .card-columns-tri {

@@ -1,7 +1,10 @@
 <div>
+  <br>
   <h1>{{ page.title }}</h2>
   <p>{{ page.date | date: '%B %d, %Y' }}</p>
 {{ content }}
+<br>
+<br>
 {% if page.comments %}
 <div id="disqus_thread"></div>
 <script>

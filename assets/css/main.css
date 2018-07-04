@@ -28,7 +28,6 @@ h2-item {
 	font-variant: normal;;
 	font-weight: 500;
 	line-height: 15.4px;
-	color: rgb(76, 79, 82);
 }
 a {
 	font-family: Cardo;
@@ -53,7 +52,6 @@ body,p,li {
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 20px;
-	background-color: rgba(247, 244, 244, 0.596);
 	color: rgb(45, 46, 46)
 }
 pa {
@@ -85,7 +83,7 @@ pre {
 }
 
 /** Set `margin-bottom` to maintain vertical rhythm */
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; line-height: 1.8; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { line-height: 1.8; }
 
 /** Images */
 img { max-width: 100%; vertical-align: middle; }
